@@ -21,7 +21,7 @@ mv ../Model/Results/PE_output_wholesaleprice.csv ../Model/Results/sim_wholesale/
 for i in {1..100}
 do
   # convert the ith fuel_price data file from csv to gdx format  
-  ../26.1/csv2gdx.exe ../Data/updated_data/fuel_shock/PE_pf_SHOCK_${i}.csv output=../Data/output/MEEDE_pf.gdx index=1..3 values=lastCol useHeader=Y id=pf
+  csv2gdx ../Data/updated_data/fuel_shock/PE_pf_SHOCK_${i}.csv output=../Data/output/MEEDE_pf.gdx index=1..3 values=lastCol useHeader=Y id=pf
 
   # run the optimization model with that fuel price file
   ./run_pe.sh
