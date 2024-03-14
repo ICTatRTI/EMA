@@ -1,0 +1,47 @@
+---
+---
+
+```{r setup, include=FALSE, warning = FALSE, message = FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+wd = getwd()
+setwd('C:/Users/sweisberg/OneDrive - Research Triangle Institute/Documents/EMA/EMA/Model/Results')
+
+source("empirical_supply_curve.R")
+source("../../Data/R scripts/sim_results_distribution.R")
+
+regions = unique(meede_data$region)
+
+```
+
+## Empirical Supply Curves
+
+```{r gas_coal, echo=FALSE, warning = FALSE, message = FALSE}
+plot = plot_supply_curves(meede_data, region_filter = "USA")
+plot = plot + plot_annotation(title = "USA", theme = theme(plot.title = element_text(face = "bold", hjust = 0.5)))
+print(plot)
+
+for (r in regions) {
+  if (r != "USA") {
+    plot = plot_supply_curves(meede_data, region_filter = r)
+    plot = plot + plot_annotation(title = r, theme = theme(plot.title = element_text(face = "bold", hjust = 0.5)))
+    print(plot)
+  }
+}
+```
+
+## Empirical Supply Curves: All Technologies
+
+```{r techs, echo=FALSE, warning = FALSE, message = FALSE}
+plot = plot_supply_curve_tech(meede_data, region_filter = "USA")
+plot = plot + plot_annotation(title = "USA", theme = theme(plot.title = element_text(face = "bold", hjust = 0.5)))
+print(plot)
+
+for (r in regions) {
+  if (r != "USA") {
+    plot = plot_supply_curve_tech(meede_data, region_filter = r)
+    plot = plot + plot_annotation(title = r, theme = theme(plot.title = element_text(face = "bold", hjust = 0.5)))
+    print(plot)
+  }
+}
+```

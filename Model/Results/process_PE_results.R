@@ -5,26 +5,34 @@ library(ggplot2)
 library(stringr)
 
 wd = getwd()
-setwd('C:/GAMS/win64/26.1/EMA/Model/Results')
+setwd('C:/Users/sweisberg/OneDrive - Research Triangle Institute/Documents/EMA/EMA/Model/Results')
 
-capacity = read.csv("EMA_output_capacity.csv", header = T, stringsAsFactors = F) # Units: GW
+capacity = read.csv("PE_output_capacity.csv", header = T, stringsAsFactors = F) # Units: GW
 #demandreg = read.csv("EMA_output_demandreg.csv", header = T, stringsAsFactors = F)
 #demandseg = read.csv("EMA_output_demandseg.csv", header = T, stringsAsFactors = F)
 #emissions = read.csv("EMA_output_emissions.csv", header = T, stringsAsFactors = F)
 #generation = read.csv("EMA_output_generation.csv", header = T, stringsAsFactors = F)
 #generation = read.csv("EMA_output_generation_OG.csv", header = T, stringsAsFactors = F)
-generation = read.csv("EMA_output_generation.csv", header = T, stringsAsFactors = F) # Units: TWh
+generation = read.csv("PE_output_generation.csv", header = T, stringsAsFactors = F) # Units: TWh
 #generation = read.csv("EMA_output_generation_carbtax20.csv", header = T, stringsAsFactors = F)
-fomcost = read.csv("EMA_output_fomcost.csv", header = T, stringsAsFactors = F) # Units: $ per kW-yr
-vomcost = read.csv("EMA_output_vomcost.csv", header = T, stringsAsFactors = F) # Units: $ per MWh
+fomcost = read.csv("PE_output_fomcost.csv", header = T, stringsAsFactors = F) # Units: $ per kW-yr
+vomcost = read.csv("PE_output_vomcost.csv", header = T, stringsAsFactors = F) # Units: $ per MWh
 #colnames(generation) = c("region","unit","load_segment","vintage","time","value")
 #transmission = read.csv("EMA_output_transmission.csv", header = T, stringsAsFactors = F)
-wholesale = read.csv("EMA_output_wholesaleprice.csv", header = T, stringsAsFactors = F)
+wholesale = read.csv("PE_output_wholesaleprice.csv", header = T, stringsAsFactors = F)
+
+# state-level results
+capacity_STATE = read.csv("PE_output_capacity_STATE.csv", header = T, stringsAsFactors = F) # Units: GW
+generation_STATE = read.csv("PE_output_generation_STATE.csv", header = T, stringsAsFactors = F) # Units: TWh
+fomcost_STATE = read.csv("PE_output_fomcost_STATE.csv", header = T, stringsAsFactors = F) # Units: $ per kW-yr
+vomcost_STATE = read.csv("PE_output_vomcost_STATE.csv", header = T, stringsAsFactors = F) # Units: $ per MWh
+wholesale_STATE = read.csv("PE_output_wholesaleprice_STATE.csv", header = T, stringsAsFactors = F)
 
 plant_map = read.csv("new_existing.csv", header = T, stringsAsFactors = F)
 region_map = read.csv("region_map.csv", header = T, stringsAsFactors = F)
 
-MEEDE_df = read.csv("2020_data_comparison_MEEDE.csv", header = T, stringsAsFactors = F)
+MEEDE_df = read.csv("../../Data/updated_data/2020_data_comparison_MEEDE.csv", header = T, stringsAsFactors = F)
+MEEDE_df_STATE = read.csv("../../Data/updated_data/2020_data_comparison_MEEDE_STATE.csv", header = T, stringsAsFactors = F)
 
 ## generation
 # roll up vintage
@@ -32,11 +40,23 @@ generation = generation %>% group_by(region, unit, load_segment, time) %>% summa
   left_join(plant_map, by = "unit") %>%
   select(region, unit, status, plant_type, renewable, load_segment, time, value)
 
+# same for state data
+generation_STATE = generation_STATE %>% group_by(region, unit, load_segment, time) %>% summarize(value = sum(value)) %>%
+  left_join(plant_map, by = "unit") %>%
+  select(region, unit, status, plant_type, renewable, load_segment, time, value)
+
 capacity = capacity %>% group_by(region, unit, time) %>% summarize(value = sum(value)) %>%
   left_join(plant_map, by = "unit") %>%
   select(region, unit, status, plant_type, renewable, time, value)
 
+# same for state data
+capacity_STATE = capacity_STATE %>% group_by(region, unit, time) %>% summarize(value = sum(value)) %>%
+  left_join(plant_map, by = "unit") %>%
+  select(region, unit, status, plant_type, renewable, time, value)
+
 wholesale = wholesale %>% filter(load_segment == "avg")#, time == 2020)
+
+wholesale_STATE = wholesale_STATE %>% filter(load_segment == "avg")
 
 # Functions to calculate costs
 calc_cost = function(gen_data, cap_data, fom_data, vom_data, wholesale_data) {
@@ -71,6 +91,9 @@ calc_cost = function(gen_data, cap_data, fom_data, vom_data, wholesale_data) {
 
 combined_df = calc_cost(generation, capacity, fomcost, vomcost, wholesale)
 combined_df = combined_df %>% filter(time == 2020, status == "existing")
+
+combined_df_STATE = calc_cost(generation_STATE, capacity_STATE, fomcost_STATE, vomcost_STATE, wholesale_STATE)
+combined_df_STATE = combined_df_STATE %>% filter(time == 2020, status == "existing")
 
 sage_region_rollup = function(dataframe, region_map) {
   data_merged = dataframe %>% 

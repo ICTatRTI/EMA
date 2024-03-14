@@ -6,19 +6,25 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE, warning = FALSE, message = FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
+
+library(knitr)
+#library(ggplot2)
+knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_knit$set(root.dir= normalizePath('..'))
+knitr::opts_chunk$set(error = FALSE)
 
 wd = getwd()
-setwd('C:/GAMS/win64/26.1/EMA/Model/Results')
+setwd('C:/Users/sweisberg/OneDrive - Research Triangle Institute/Documents/EMA/EMA/Model/Results')
 
-source("process_EMA_results.R")
+source("process_PE_results.R")
 
 # options
 PLANT_TYPES = c("slr", "ngcc", "ngtb", "wnd", "col", "bio", "hyd","nuc")
-REGION_OPTION = "USA" # "EMA","SAGE","USA"
+REGION_OPTION = "SAGE" # "EMA","SAGE","USA","STATE"
 
 # Organize data and plots
-EMA_data = combined_df
+PE_data = combined_df
 MEEDE_data = MEEDE_df
 
 ylim_gen = 400
@@ -28,7 +34,7 @@ ylim_cost = 9000
 grid_plot = FALSE
 if (REGION_OPTION == "SAGE") {
   MEEDE_data = sage_region_rollup(MEEDE_data, region_map)
-  EMA_data = sage_region_rollup(EMA_data, region_map)
+  PE_data = sage_region_rollup(PE_data, region_map)
   
   ylim_gen = 1250
   ylim_cap = 200
@@ -36,14 +42,22 @@ if (REGION_OPTION == "SAGE") {
   grid_plot = TRUE
 } else if (REGION_OPTION == "USA") {
   MEEDE_data = usa_region_rollup(MEEDE_data)
-  EMA_data = usa_region_rollup(EMA_data)
+  PE_data = usa_region_rollup(PE_data)
   
   ylim_gen = 2250
   ylim_cap = 400
   ylim_cost = 55000
+} else if (REGION_OPTION == "STATE") {
+  MEEDE_data = MEEDE_df_STATE
+  colnames(MEEDE_data)[1] = "region"
+  PE_data = combined_df_STATE
+  
+  ylim_gen = 1000
+  ylim_cap = 200
+  ylim_cost = 25000
 }
 
-REGIONS = unique(EMA_data$region)
+REGIONS = unique(PE_data$region)
 
 ```
 
@@ -55,7 +69,7 @@ REGIONS = unique(EMA_data$region)
 if (grid_plot) {
   p = NA
 for (r in REGIONS) {
-    p_ = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "capacity", region = r, 
+    p_ = comparison_bargraphs(MEEDE_data, PE_data, y_var = "capacity", region = r, 
                               plant_type_filter = PLANT_TYPES, ylim = ylim_cap, grid = grid_plot)
     
     if (is.na(p)) {
@@ -68,11 +82,12 @@ for (r in REGIONS) {
   
 } else {
   for (r in REGIONS) {
-    p = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "capacity", region = r, 
+    p = comparison_bargraphs(MEEDE_data, PE_data, y_var = "capacity", region = r, 
                               plant_type_filter = PLANT_TYPES, ylim = ylim_cap, grid = grid_plot)
+    print(p)
   }
 }
-print(p)
+#print(p)
 ```
 
 ## Total Regional Generation
@@ -83,7 +98,7 @@ print(p)
 if (grid_plot) {
   p = NA
   for (r in REGIONS) {
-      p_ = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "generation", region = r, 
+      p_ = comparison_bargraphs(MEEDE_data, PE_data, y_var = "generation", region = r, 
                                 plant_type_filter = PLANT_TYPES, ylim = ylim_gen, grid = grid_plot)
       
       if (is.na(p)) {
@@ -96,8 +111,9 @@ if (grid_plot) {
   
 } else {
   for (r in REGIONS) {
-    p = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "generation", region = r, 
+    p = comparison_bargraphs(MEEDE_data, PE_data, y_var = "generation", region = r, 
                               plant_type_filter = PLANT_TYPES, ylim = ylim_gen, grid = grid_plot)
+    print(p)
   }
 }
 print(p)
@@ -114,7 +130,7 @@ print(p)
 if (grid_plot) {
   p = NA
   for (r in REGIONS) {
-      p_ = comparison_bargraph_wholesale(MEEDE_data, EMA_data, region = r, 
+      p_ = comparison_bargraph_wholesale(MEEDE_data, PE_data, region = r, 
                                 plant_type_filter = PLANT_TYPES, ylim = ylim_wholesale, grid = grid_plot)
       
       if (is.na(p)) {
@@ -127,8 +143,9 @@ if (grid_plot) {
   
 } else {
   for (r in REGIONS) {
-    p = comparison_bargraph_wholesale(MEEDE_data, EMA_data, region = r, 
+    p = comparison_bargraph_wholesale(MEEDE_data, PE_data, region = r, 
                               plant_type_filter = PLANT_TYPES, ylim = ylim_wholesale, grid = grid_plot)
+    print(p)
   }
 }
 print(p)
@@ -142,7 +159,7 @@ print(p)
 #ALL_IN_ONE = FALSE
 
 #for (r in REGIONS) {
-#  p = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "total_cost", region = r, plant_type_filter = #PLANT_TYPES, ylim = ylim_cost)
+#  p = comparison_bargraphs(MEEDE_data, PE_data, y_var = "total_cost", region = r, plant_type_filter = #PLANT_TYPES, ylim = ylim_cost)
   
   #print(p)
 #}
@@ -156,7 +173,7 @@ print(p)
 #ALL_IN_ONE = FALSE
 
 # for (r in REGIONS) {
-#   p = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "fixed_cost", region = r, plant_type_filter = PLANT_TYPES, ylim = 6000)
+#   p = comparison_bargraphs(MEEDE_data, PE_data, y_var = "fixed_cost", region = r, plant_type_filter = PLANT_TYPES, ylim = 6000)
 #   
 #   print(p)
 # }
@@ -170,7 +187,7 @@ print(p)
 #ALL_IN_ONE = FALSE
 
 # for (r in REGIONS) {
-#   p = comparison_bargraphs(MEEDE_data, EMA_data, y_var = "variable_cost", region = r, plant_type_filter = PLANT_TYPES, ylim = 4000)
+#   p = comparison_bargraphs(MEEDE_data, PE_data, y_var = "variable_cost", region = r, plant_type_filter = PLANT_TYPES, ylim = 4000)
 #   
 #   print(p)
 # }

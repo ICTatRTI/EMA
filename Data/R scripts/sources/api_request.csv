@@ -1,0 +1,5 @@
+variable,item,notes_varcode,region,EIA_template,EIA_unit,EIA_name
+Electric Power Natural Gas Price,Price,NA,USA,{EIA_pub}.{EIA_scenario}.PRCE_REAL_ELEP_NA_NG_NA_NA_Y13DLRPMMBTU.A,dollars/MMBtu,Energy Prices : Electric Power : Natural Gas
+Electric Power Steam Coal Price,Price,NA,USA,{EIA_pub}.{EIA_scenario}.PRCE_REAL_ELEP_NA_STC_NA_NA_Y13DLRPMMBTU.A,dollars/MMBtu,"Energy Prices : Electric Power : Steam Coal, United States"
+Electric Power Uranium Price,Price,NA,USA,{EIA_pub}.{EIA_scenario}.PRCE_REAL_ELEP_NA_U_NA_NA_Y13DLRPMMBTU.A,dollars/MMBtu,"Energy Prices : Electric Power : Uranium, United States"
+Electric Power Oil Price,Price,NA,USA,{EIA_pub}.{EIA_scenario}.PRCE_REAL_ELEP_NA_DFO_NA_NA_Y13DLRPMMBTU.A,dollars/MMBtu,"Energy Prices : Electric Power : Distillate Fuel Oil, United States"
