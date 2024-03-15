@@ -1,0 +1,537 @@
+
+--- Job data.gms Start 04/18/12 15:19:22 WEX-WEI 23.8.1 x86_64/MS Windows     
+GAMS Rev 238  Copyright (C) 1987-2012 GAMS Development. All rights reserved
+Licensee: EF&M Group                                     G111220:2011CP-WIN
+          National Renewable Energy Laboratory (NREL)                DC3485
+--- Starting compilation
+--- data.gms(5) 2 Mb 3 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(9) 2 Mb 4 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(14) 2 Mb 6 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(19) 2 Mb 7 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(27) 2 Mb 8 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(32) 2 Mb 9 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(35) 2 Mb 10 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(41) 2 Mb
+--- GDXin=C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\output\model_data.gdx
+--- data.gms(42) 3 Mb 62 Errors
+*** Error 361 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 1 are unknown - no checking possible
+*** Error 362 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 2 are unknown - no checking possible
+*** Error 363 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 3 are unknown - no checking possible
+*** Error 649 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation when loading from GDX file
+*** Error 361 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 1 are unknown - no checking possible
+*** Error 362 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 2 are unknown - no checking possible
+*** Error 363 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 3 are unknown - no checking possible
+*** Error 361 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 1 are unknown - no checking possible
+*** Error 362 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 2 are unknown - no checking possible
+*** Error 300 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Remaining errors not printed for this line
+--- data.gms(54) 3 Mb 63 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(94) 3 Mb 67 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(97) 3 Mb 69 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(98) 3 Mb 76 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(99) 3 Mb 79 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(123) 3 Mb 83 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(156) 3 Mb 85 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(168) 3 Mb 86 Errors
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(169) 3 Mb 87 Errors
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(171) 3 Mb 88 Errors
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(173) 3 Mb 89 Errors
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(174) 3 Mb 91 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(229) 3 Mb 92 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(230) 3 Mb 93 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(231) 3 Mb 94 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(232) 3 Mb 95 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(233) 3 Mb 96 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(234) 3 Mb 97 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(235) 3 Mb 98 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(236) 3 Mb 99 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(237) 3 Mb 100 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(238) 3 Mb 101 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(244) 3 Mb 102 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+--- data.gms(256) 3 Mb 103 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(257) 3 Mb 104 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(258) 3 Mb 105 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(259) 3 Mb 106 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(260) 3 Mb 107 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(261) 3 Mb 108 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(263) 3 Mb 110 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(264) 3 Mb 112 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(265) 3 Mb 114 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(266) 3 Mb 116 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(267) 3 Mb 118 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(268) 3 Mb 120 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(270) 3 Mb 121 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(271) 3 Mb 122 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(272) 3 Mb 123 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(273) 3 Mb 124 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(274) 3 Mb 125 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(275) 3 Mb 126 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(277) 3 Mb 128 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(278) 3 Mb 130 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(279) 3 Mb 132 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(280) 3 Mb 134 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(281) 3 Mb 136 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(282) 3 Mb 138 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(295) 3 Mb 139 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(296) 3 Mb 140 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(297) 3 Mb 141 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(298) 3 Mb 142 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(299) 3 Mb 143 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(300) 3 Mb 144 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(302) 3 Mb 145 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(303) 3 Mb 146 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(304) 3 Mb 147 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(305) 3 Mb 148 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(306) 3 Mb 149 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(307) 3 Mb 150 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(309) 3 Mb 152 Errors
+*** Error 361 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 1 are unknown - no checking possible
+*** Error 362 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Values for domain 2 are unknown - no checking possible
+--- data.gms(334) 3 Mb 153 Errors
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(339) 3 Mb 154 Errors
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(340) 3 Mb 155 Errors
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(343) 3 Mb 156 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(344) 3 Mb 157 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(345) 3 Mb 159 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(346) 3 Mb 161 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(347) 3 Mb 162 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(348) 3 Mb 164 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 140 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown symbol
+--- data.gms(351) 3 Mb 166 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(352) 3 Mb 168 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(354) 3 Mb 170 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(356) 3 Mb 172 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(360) 3 Mb 174 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(388) 3 Mb 178 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(396) 3 Mb 182 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(401) 3 Mb 184 Errors
+*** Error 120 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Unknown identifier entered as set
+*** Error 340 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    A label/element with the same name exist. You may have forgotten
+       to quote a label/element reference. For example,
+       set i / a,b,c /; parameter x(i); x('a') = 10;
+--- data.gms(402) 3 Mb 187 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(405) 3 Mb 191 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(406) 3 Mb 192 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(409) 3 Mb 193 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(410) 3 Mb 194 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(411) 3 Mb 195 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(414) 3 Mb 196 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(415) 3 Mb 197 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(418) 3 Mb 198 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(421) 3 Mb 200 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(422) 3 Mb 201 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(430) 3 Mb 204 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(432) 3 Mb 207 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(434) 3 Mb 209 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(436) 3 Mb 210 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(437) 3 Mb 213 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+--- data.gms(452) 3 Mb 215 Errors
+*** Error 171 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    Domain violation for set
+*** Error 353 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\data.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+--- data.gms(455) 3 Mb 215 Errors
+*** Status: Compilation error(s)
+--- Job data.gms Stop 04/18/12 15:19:23 elapsed 0:00:01.110
+Exit code = 2

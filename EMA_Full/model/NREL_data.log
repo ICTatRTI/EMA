@@ -1,0 +1,70 @@
+
+--- Job NREL_data.gms Start 04/16/12 11:19:51 WEX-WEI 23.7.1 x86_64/MS Windows     
+GAMS Rev 237  Copyright (C) 1987-2011 GAMS Development. All rights reserved
+Licensee: EF&M Group                                     G111220:2011CP-WIN
+          National Renewable Energy Laboratory (NREL)                DC3485
+--- Starting compilation
+--- NREL_data.gms(438) 3 Mb
+--- call gdxxrw i=WindbyState.xlsx o=NREL_wind_onshore.gdx par=windon rng=onshore!j5:ec245 rdim=2 cdim=1
+
+GDXXRW           Jul 14, 2011 23.7.1 WIN 26777.26792 VS8 x86/MS Windows       
+**** Input file not found = C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\WindbyState.xlsx
+Total time = 328 Ms
+--- NREL_data.gms(439) 3 Mb
+*** GDXIN failed C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\NREL_wind_onshore.gdx
+*** Msg: No such file or directory
+--- NREL_data.gms(439) 3 Mb 1 Error
+*** Error 510 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    Unable to open gdx file for $GDXIN
+--- NREL_data.gms(440) 3 Mb 2 Errors
+*** Error 502 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    GDXIN  file not open - ignore rest of line
+--- NREL_data.gms(442) 3 Mb
+--- call gdxxrw i=WindbyState.xlsx o=NREL_wind_offshore_shallow.gdx par=windoffshl rng=offshore_shallow!j5:dh245 rdim=2 cdim=1
+
+GDXXRW           Jul 14, 2011 23.7.1 WIN 26777.26792 VS8 x86/MS Windows       
+**** Input file not found = C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\WindbyState.xlsx
+Total time = 344 Ms
+--- NREL_data.gms(443) 3 Mb
+*** GDXIN failed C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\NREL_wind_offshore_shallow.gdx
+*** Msg: No such file or directory
+--- NREL_data.gms(443) 3 Mb 3 Errors
+*** Error 510 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    Unable to open gdx file for $GDXIN
+--- NREL_data.gms(444) 3 Mb 4 Errors
+*** Error 502 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    GDXIN  file not open - ignore rest of line
+--- NREL_data.gms(446) 3 Mb
+--- call gdxxrw i=WindbyState.xlsx o=NREL_wind_offshore_deep.gdx par=windoffdep rng=offshore_deep!j5:dp245 rdim=2 cdim=1
+
+GDXXRW           Jul 14, 2011 23.7.1 WIN 26777.26792 VS8 x86/MS Windows       
+**** Input file not found = C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\WindbyState.xlsx
+Total time = 328 Ms
+--- NREL_data.gms(447) 3 Mb
+*** GDXIN failed C:\Documents and Settings\psulliva\My Documents\EMA_2012\model\NREL_wind_offshore_deep.gdx
+*** Msg: No such file or directory
+--- NREL_data.gms(447) 3 Mb 5 Errors
+*** Error 510 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    Unable to open gdx file for $GDXIN
+--- NREL_data.gms(448) 3 Mb 6 Errors
+*** Error 502 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    GDXIN  file not open - ignore rest of line
+--- NREL_data.gms(452) 3 Mb 7 Errors
+*** Error 141 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    Symbol neither initialized nor assigned
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- NREL_data.gms(453) 3 Mb 8 Errors
+*** Error 141 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    Symbol neither initialized nor assigned
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- NREL_data.gms(454) 3 Mb 9 Errors
+*** Error 141 in C:\Documents and Settings\psulliva\My Documents\EMA_2012\data\NREL\NREL_data.gms
+    Symbol neither initialized nor assigned
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- NREL_data.gms(532) 3 Mb 9 Errors
+*** Status: Compilation error(s)
+--- Job NREL_data.gms Stop 04/16/12 11:19:52 elapsed 0:00:01.594
+Exit code = 2
