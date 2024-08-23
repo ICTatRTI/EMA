@@ -9,6 +9,7 @@ set     yr              years           / 2020 * 2100 /
         t(yr)           time periods    / 2020 /;          alias(t,v);
 
 **--    Regions         --**
+$ontext
 set     r               regions /
         NEG             New England
         NY              New York
@@ -23,6 +24,14 @@ set     r               regions /
         MTN             Mountain
         CA              California
         PAC             Pacific /;
+$offtext
+
+set     r               regions /
+        Northeast
+        South
+        West
+        Midwest
+        /;
 
 **--    Model Unit Types        --**
 set     u               units   /

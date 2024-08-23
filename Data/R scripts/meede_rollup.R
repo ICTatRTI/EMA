@@ -1,4 +1,5 @@
 # Pre-process MEEDE data for use by PE Dispatch model
+# Updated March, 2024
 
 library(dplyr)
 options(dplyr.summarise.inform = FALSE)
@@ -7,10 +8,10 @@ options(dplyr.join.inform = FALSE)
 wd = getwd()
 setwd('C:/Users/sweisberg/OneDrive - Research Triangle Institute/Documents/EMA/EMA/Data/R Scripts')
 
-YEAR = 2019
+YEAR = 2021
 PE_YEAR = 2020
 ONLY_2020 = TRUE
-STATE_LEVEL = TRUE
+STATE_LEVEL = FALSE
 COAL = c("col")
 STEAMOIL_GAS = c("stog")
 COMBUSTION_TURBINES = c("ngcc","ngtb")
@@ -22,19 +23,19 @@ EPSILON = 0.000001
 
 # Read data
 dta = read.csv("sources/MEEDE_Econ_Annual_WIDE.csv", header = T, stringsAsFactors = F)
-regions = read.csv("sources/region_map.csv", header = T, stringsAsFactors = F)
+regions = read.csv("sources/region_map_sage.csv", header = T, stringsAsFactors = F)
 #plant_types = read.csv("sources/planttype_map.csv", header = T, stringsAsFactors = F)
 plant_types = read.csv("sources/planttype_map_alt.csv", header = T, stringsAsFactors = F)
-heatrates_future = read.csv("sources/heatrates_future.csv", header = T, stringsAsFactors = F)
-fomcost_future = read.csv("sources/fomcost_future.csv", header = T, stringsAsFactors = F)
-vomcost_future = read.csv("sources/vomcost_future.csv", header = T, stringsAsFactors = F)
+heatrates_future = read.csv("sources/heatrates_future_sage.csv", header = T, stringsAsFactors = F)
+fomcost_future = read.csv("sources/fomcost_future_sage.csv", header = T, stringsAsFactors = F)
+vomcost_future = read.csv("sources/vomcost_future_sage.csv", header = T, stringsAsFactors = F)
 
 # supplemental data
 plant_map = read.csv("sources/new_existing.csv", header = T, stringsAsFactors = F)
-dele_ratios = read.csv("sources/dele_ratios.csv", header = T, stringsAsFactors = F)
+dele_ratios = read.csv("sources/dele_ratios_sage.csv", header = T, stringsAsFactors = F)
 fuel_type_map = read.csv("sources/fuel_types.csv", header = T, stringsAsFactors = F)
-fuel_ratios = read.csv("sources/fuel_ratios.csv", header = T, stringsAsFactors = F)
-fuel_old = read.csv("sources/pf_old.csv", header = T, stringsAsFactors = F)
+fuel_ratios = read.csv("sources/fuel_ratios_sage.csv", header = T, stringsAsFactors = F)
+fuel_old = read.csv("sources/pf_old_sage.csv", header = T, stringsAsFactors = F)
 
 # SEDS data for electricity demand--testing
 seds_total = read.csv("sources/seds_consumption_total.csv", header = T, stringsAsFactors = F)
@@ -197,7 +198,7 @@ if (STATE_LEVEL) {
 # units: $ per kW (MEEDE gives fomcost in $ so we need some calculations)
 if (STATE_LEVEL) {
   dta_fomcost_mid = dta_merged %>% group_by(state, plant_type_full) %>% summarise(total_fom = sum(FOM_tot)) %>%
-    inner_join(select(dta_capacity,c(state, plant_type_full, Value)), on = c("state","plant_type_full")) %>%
+    inner_join(select(dta_capacity,c(state, plant_type_full, Value)), by = c("state","plant_type_full")) %>%
     mutate(fom_calc = (total_fom / (1000000 * Value)))
   
   dta_fomcost = dta_fomcost_mid %>% select(c(state, plant_type_full, fom_calc))
@@ -212,7 +213,7 @@ if (STATE_LEVEL) {
   write.csv(dta_fomcost_full, "../updated_data/PE_fomcost_STATE.csv", row.names = F)
 } else {
   dta_fomcost_mid = dta_merged %>% group_by(region, plant_type_full) %>% summarise(total_fom = sum(FOM_tot)) %>%
-    inner_join(select(dta_capacity,c(region, plant_type_full, Value)), on = c("region","plant_type_full")) %>%
+    inner_join(select(dta_capacity,c(region, plant_type_full, Value)), by = c("region","plant_type_full")) %>%
     mutate(fom_calc = (total_fom / (1000000 * Value)))
   
   dta_fomcost = dta_fomcost_mid %>% select(c(region, plant_type_full, fom_calc))

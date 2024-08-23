@@ -1,0 +1,15 @@
+state,end_state,Value
+Northeast,Northeast,999
+Northeast,South,8.979179
+Northeast,Midwest,8.485895
+Midwest,Northeast,7.719821
+Midwest,Midwest,999
+Midwest,South,24.642042
+Midwest,West,0.502492
+South,South,999
+South,Northeast,9.7476
+South,Midwest,25.708072
+South,West,0.633665
+West,Midwest,0.522999
+West,South,0.540174
+West,West,999

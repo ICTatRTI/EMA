@@ -6,13 +6,18 @@ library(lubridate)
 wd = getwd()
 setwd('C:/Users/sweisberg/OneDrive - Research Triangle Institute/Documents/EMA/EMA/Model/Results')
 
+options(dplyr.summarise.inform = FALSE)
+
 NATIONAL_GAS_PRICE = 3.43
+MOVER = "gas"
+# MOVER = "col"
+# MOVER = "oil"
 
 N = 100
-nrow = 65
-nrow_price = nrow / 5
-ncol = 4
-ncol_price = 3
+# nrow = 65
+# nrow_price = nrow / 5
+# ncol = 4
+# ncol_price = 3
 
 colors = c(
   "#f8766d", # red
@@ -24,15 +29,19 @@ colors2 = c(
   "#addde6" # light blue
 )
 
+
 # Read in csv with mapping towards generation types
 fuel_map = read.csv("fuel_map.csv", header = T, stringsAsFactors = F)
 
 # Read in csv with details on the shock price for each iteration
-shock_ratios = read.csv("shock_ratio.csv", header = T, stringsAsFactors = F) %>%
+# shock_ratios = read.csv("shock_ratio.csv", header = T, stringsAsFactors = F) %>%
+#   mutate(iteration = seq(1,N, by = 1))
+
+shock_ratios = read.csv(paste0("shock_ratio_",MOVER,".csv"), header = T, stringsAsFactors = F) %>%
   mutate(iteration = seq(1,N, by = 1))
 
 # Read in baseline data
-price_baseline = read.csv("../../Data/updated_data/PE_pf_BASELINE.csv", header = T, stringsAsFactors = F) %>%
+price_baseline = read.csv("../../Data/updated_data/PE_pf_BASELINE_SAGE.csv", header = T, stringsAsFactors = F) %>%
   filter(fuel_type %in% c("COL","GAS")) %>%
   mutate(fuel_type = ifelse(fuel_type == "COL","COAL",fuel_type))
 
@@ -45,27 +54,32 @@ colnames(generation_baseline) = c("region", "gen_type", "generation", "year", "f
 
 # Build a dataframe with all of the data from the simulations
 # Also read in all of the price data
-data_full = data.frame(matrix(rep(0,nrow * ncol * N), ncol = ncol))
-prices_full = data.frame(matrix(rep(0,nrow_price * ncol_price * N), ncol = ncol_price))
-colnames(data_full) = c("region", "gen_type", "value","iteration")
-colnames(prices_full) = c("region", "fuel_price", "iteration")
+# data_full = data.frame(matrix(rep(0,nrow * ncol * N), ncol = ncol))
+# prices_full = data.frame(matrix(rep(0,nrow_price * ncol_price * N), ncol = ncol_price))
+data_full = data.frame()
+prices_full = data.frame()
 for (i in 1:N) {
-  filename = paste("./sim_generation/PE_output_generation_",i,".csv", sep = "")
-  temp = read.csv(filename, header = T, stringsAsFactors = F) %>% select(-c(vintage, time)) %>%
+  filename = paste("./sim_generation/PE_output_generation_", MOVER, "_", i, ".csv", sep = "")
+  temp = read.csv(filename, header = T, stringsAsFactors = F) %>% 
+    select(-c(vintage, time)) %>%
     left_join(fuel_map, by = "unit") %>%
     group_by(region, gen_type) %>% summarize(value = sum(value)) %>%
     mutate(iteration = i)
   
-  data_full[(nrow * (i - 1) + 1) : (nrow * i),] = temp[1:nrow,]
+  data_full = bind_rows(data_full, temp)
+  # data_full[(nrow * (i - 1) + 1) : (nrow * i),] = temp[1:nrow,]
   
-  filename = paste("../../Data/updated_data/fuel_shock/PE_pf_SHOCK_", i, ".csv", sep = "")
-  temp = read.csv(filename, header = T, stringsAsFactors = F) %>% filter(fuel_type == "GAS") %>%
+  filename = paste("../../Data/updated_data/fuel_shock/PE_pf_SHOCK_", MOVER, "_", i, ".csv", sep = "")
+  temp = read.csv(filename, header = T, stringsAsFactors = F) %>% 
+    filter(fuel_type == "GAS") %>%
     select(-c(year,fuel_type)) %>%
     mutate(iteration = i)
   
-  
-  prices_full[(nrow_price * (i - 1) + 1) : (nrow_price * i),] = temp[1:nrow_price,]
+  prices_full = bind_rows(prices_full, temp)
+  # prices_full[(nrow_price * (i - 1) + 1) : (nrow_price * i),] = temp[1:nrow_price,]
 }
+colnames(data_full) = c("region", "gen_type", "value","iteration")
+colnames(prices_full) = c("region", "fuel_price", "iteration")
 
 # merge with the ratios by iteration--might be useful later
 data_full = data_full %>% left_join(shock_ratios, by = "iteration")
@@ -83,20 +97,19 @@ generation_distribution_plot = function(dataframe, baseline, region_filter = "US
   
   p = dataframe %>% 
     filter(gen_type %in% c("COAL","GAS")) %>% # RENEW is always constant, NUC is almost always constant, who cares about OTHER...
-    # gotta figure out why RENEW is constant though...
     ggplot() +
-    geom_density(aes(x = value, color = gen_type, fill = gen_type), alpha = 0.1, adjust = 0.75, size = 0.8) +
+    geom_density(aes(x = value, color = gen_type, fill = gen_type), alpha = 0.1, adjust = 0.75, linewidth = 0.8) +
     scale_color_manual(values = colors2, name = "Generation") + 
     scale_fill_manual(values = colors2, name = "Generation") + 
-    geom_vline(aes(xintercept = mean(baseline$value[baseline$gen_type == "COAL"])), color = colors2[1], linetype = "longdash", size = 0.6) + 
-    geom_vline(aes(xintercept = mean(baseline$value[baseline$gen_type == "GAS"])), color = colors2[2], linetype = "longdash", size = 0.6) + 
+    geom_vline(aes(xintercept = mean(baseline$value[baseline$gen_type == "COAL"])), color = colors2[1], linetype = "longdash", linewidth = 0.6) + 
+    geom_vline(aes(xintercept = mean(baseline$value[baseline$gen_type == "GAS"])), color = colors2[2], linetype = "longdash", linewidth = 0.6) + 
     scale_y_continuous(expand = expansion(mult = c(0,0.1))) +
     scale_x_continuous(limits = c(0,3000), expand = expansion(mult = c(0,0.05))) +
     labs(x = "Total Generation (TWh)", y = "Density", title = paste("Distributions of Gas/Coal Generation under Gas Price Shocks: ", region_filter, sep = "")) +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(),axis.ticks = element_blank(),
-          axis.line.x = element_line(size = 0.5, color = "black", linetype=1),
-          axis.line.y = element_line(size = 0.5, color = "black", linetype=1), 
+          axis.line.x = element_line(linewidth = 0.5, color = "black", linetype=1),
+          axis.line.y = element_line(linewidth = 0.5, color = "black", linetype=1), 
           axis.text.x = element_text(size = 10), axis.text.y = element_blank(),
           plot.title = element_blank(), legend.position = "None")
   return(p)
@@ -113,36 +126,46 @@ fuel_shock_scatter = function(dataframe, region_filter = "USA") {
     dataframe = dataframe %>% group_by(gen_type, iteration, ratio) %>% summarize(value = sum(value)) %>% mutate(region = "USA")
     #baseline = baseline %>% group_by(gen_type) %>% summarize(value = sum(value)) %>% mutate(region = "USA")
   } else {
-    dataframe = dataframe %>% filter(region == region_filter)
+    dataframe = dataframe %>% filter(region == region_filter) %>%
+      group_by(region, gen_type, value) %>% summarize(ratio = mean(ratio)) %>% ungroup()
+      #arrange(gen_type, desc(value))
     #baseline = baseline %>% filter(region == region_filter)
   }
   
   dataframe = dataframe %>% filter(gen_type %in% c("COAL", "GAS"))
   #baseline = baseline %>% filter(gen_type %in% c("COAL","GAS"))
+  #View(dataframe)
   
   jitter <- position_jitter(width = 0.0, height = 0.025)
   p = dataframe %>% ggplot() + 
     geom_point(aes(y = ratio, x = value, color = gen_type)) +
-    #geom_line(aes(y = ratio, x = value, color = gen_type), size = 0.8) +
-    geom_smooth(aes(y = ratio, x = value, color = gen_type), method='lm', formula= y~x, se = F) +
+    geom_line(aes(y = ratio, x = value, color = gen_type), size = 0.8) +
+    #geom_smooth(aes(y = ratio, x = value, color = gen_type), method='gam', formula= y~x, se = F) +
     #geom_segment(aes(y = ratio, yend = ratio, x = 0, xend = 40), color = "black", position = jitter) + 
     #geom_segment(aes(x = ratio, xend = ratio, y = 0, yend = 90), color = "red") + 
-    geom_hline(aes(yintercept = 1), color = "gray", linetype = "longdash", size = 0.6) +
-    scale_y_continuous(limits = c(0,2), expand = expansion(mult = c(0,0.05))) +
+    geom_hline(aes(yintercept = 1), color = "gray", linetype = "longdash", linewidth = 0.6) +
+    scale_y_continuous(limits = c(0,4), expand = expansion(mult = c(0,0.05))) +
     scale_x_continuous(limits = c(0,NA), expand = expansion(mult = c(0,0.05))) +
     scale_color_manual(values = colors2, name = "Generation") + 
-    labs(y = "Gas Price Ratio (Shocked Price / Baseline Price)", x = "Total Generation (TWh)") +
+    labs(title = region_filter[1], y = "Gas Price Ratio (Gas Price / Coal Price)", x = "Total Generation (TWh)") +
     theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
           panel.background = element_blank(),axis.ticks = element_blank(),
-          axis.line.x = element_line(size = 0.5, color = "black", linetype=1),
-          axis.line.y = element_line(size = 0.5, color = "black", linetype=1), 
-          axis.text.x = element_text(size = 10), axis.text.y = element_text(size = 10),
-          plot.title = element_blank(), legend.position = "None")
+          axis.line.x = element_line(linewidth = 0.5, color = "black", linetype=1),
+          axis.line.y = element_line(linewidth = 0.5, color = "black", linetype=1), 
+          axis.text.x = element_text(size = 10), axis.text.y = element_text(size = 10))
   return(p)
 }
 
-#p = fuel_shock_scatter(data_full, region_filter = "USA")
-#print(p)
+p = fuel_shock_scatter(data_full, region_filter = c("USA"))
+print(p)
+p = fuel_shock_scatter(data_full, region_filter = c("South"))
+print(p)
+p = fuel_shock_scatter(data_full, region_filter = c("Midwest"))
+print(p)
+p = fuel_shock_scatter(data_full, region_filter = c("Northeast"))
+print(p)
+p = fuel_shock_scatter(data_full, region_filter = c("West"))
+print(p)
 #ggsave("C:/Users/sweisberg/Research Triangle Institute/Henry, Candise - MEEDE Present/Figures_1112/gen_mix_scatter_sticks_rev.png", width = 6.67, height = 4, units = "in")
 
 # method either "OLS" or "relative"

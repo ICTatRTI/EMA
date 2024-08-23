@@ -72,11 +72,26 @@ $loaddc dadj
 $gdxin '..\Data\output\pbio_2020.gdx'
 $loaddc pbio
 
+$gdxin '..\Data\output\maxCF_2020.gdx'
+$loaddc maxCF
+
+$gdxin '..\Data\output\hours_2020.gdx'
+$loaddc hours
+
+$gdxin '..\Data\output\transmit_limit_2020.gdx'
+$loaddc transmit_limit
+
+$gdxin '..\Data\output\loadpct_2020.gdx'
+$loaddc loadpct
+
+$gdxin '..\Data\output\emis_factor_2020.gdx'
+$loaddc emis_factor
+
 /*$gdxin '..\Data\output\peak_2020.gdx'
 $loaddc peak */
 
 $gdxin '..\Data\output\model_data.gdx'
-$loaddc maxCF hours transmit_limit /*rsrv_factor*/ loadpct fueltype emis_factor
+$loaddc /*maxCF*/ /*hours*/ /*transmit_limit*/ /*rsrv_factor*/ /*loadpct*/ fueltype /*emis_factor*/
 
 biosupply(r,biostep,t)  = biosupply(r,biostep,t) * 1e3; /* scaling constant */
 
